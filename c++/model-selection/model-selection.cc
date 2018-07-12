@@ -86,7 +86,7 @@ class User3
     getRateFunc getRate_;
 };
 
-int user1()
+void user1()
 {
     User1 *u1a = new User1(std::make_shared<A::Data>(), nullptr);
     u1a->calculate();
@@ -94,7 +94,7 @@ int user1()
     u1b->calculate();
 }
 
-int user2()
+void user2()
 {
     // DataA 就传入 A::Data::Info作为模板参数
     auto u2a = new User2<A::Data::Info>(std::make_shared<A::Data::Info>());
@@ -104,7 +104,7 @@ int user2()
     u2b->calculate();
 }
 
-int user3()
+void user3()
 {
     auto a = std::make_shared<A::Data>();
     auto u3a = new User3([a](){
@@ -121,6 +121,7 @@ int user3()
 int main()
 {
     user1();
-    user2());
+    user2();
     user3();
+    return 0;
 }
